@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Data Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Kali Data Color Scheme (Deep Blue, Teal, Cyan, White) -->
+    <!-- Application Structure Plan: The website is a single-page application (SPA) with a top navigation bar that facilitates smooth scrolling to different sections (Hero, About, Services, Portfolio, Pricing, Team, Contact). This structure was chosen to provide a fluid, modern user experience, allowing visitors to quickly access all key information without navigating to separate pages. It mirrors the comprehensive content of the source report's pages within a unified, easily explorable layout. The primary user flow is to scroll and explore the company's offerings and brand story. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Hero Section Text & Illustration -> Goal: Capture attention, introduce services -> Presentation: Large, bold text with a simple, abstract visual element (instead of a complex image to maintain the single-file constraint) -> Interaction: 'Discover More' button scrolls to Services section -> Justification: The layout is a direct adaptation of the provided image, but with branding and a functional button.
+        - Report Info: About/Services/Pricing/Team/Contact -> Goal: Inform and engage -> Presentation: Standard text blocks, card layouts, a form -> Interaction: Scroll-to-section navigation -> Justification: These are standard, professional patterns for corporate websites that are easy to consume and interact with. The Kali Data logo is used prominently as the main brand identifier. No SVG or complex visualizations are needed for this informational website.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center text-2xl font-bold text-slate-900">
+                <span class="text-blue-900">KALI</span>
+                <span class="text-slate-500 font-normal ml-2">DATA</span>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">About</a>
+                <a href="#services" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">Services</a>
+                <a href="#portfolio" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">Portfolio</a>
+                <a href="#pricing" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">Pricing</a>
+                <a href="#team" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">Team</a>
+                <a href="#contact" class="text-slate-600 hover:text-blue-900 font-medium transition-colors duration-200">Contact</a>
+            </nav>
+            <a href="#" class="px-5 py-2 rounded-full text-white bg-teal-500 hover:bg-teal-600 transition-colors duration-200 hidden md:inline-block">Get Started</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="relative overflow-hidden pt-12 md:pt-24 pb-16 md:pb-24">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-full text-teal-600 bg-teal-100 text-sm font-medium mb-4">Innovative Solutions</div>
+                        <h1 class="text-4xl md:text-5xl font-bold leading-tight text-slate-900 mb-6">
+                            Accelerating business growth through innovative technology
+                        </h1>
+                        <p class="text-lg text-slate-600 mb-8">
+                            Kali Data provides data strategy, business intelligence, and predictive analytics to help you make smarter decisions. Our solutions are designed to unlock the full potential of your data and drive real business outcomes.
+                        </p>
+                        <a href="#services" class="px-8 py-3 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Discover More</a>
+                    </div>
+                    <div class="relative flex justify-center items-center h-full">
+                        <div class="absolute w-72 h-72 bg-teal-200 rounded-full opacity-30 blur-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                        <div class="w-full max-w-sm h-64 bg-slate-100 rounded-2xl shadow-xl flex items-center justify-center relative z-10">
+                            <div class="text-center">
+                                <span class="block text-2xl font-bold text-teal-500">Analytics in Action</span>
+                                <span class="block text-slate-600 mt-2">Data-driven insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="text-teal-500 text-3xl mb-4">
+                            <span>&#9881;</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Rapid Deployment</h3>
+                        <p class="text-slate-600">Our agile approach ensures you get up and running quickly with tangible results.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="text-teal-500 text-3xl mb-4">
+                            <span>&#128196;</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Advanced Security</h3>
+                        <p class="text-slate-600">We prioritize your data's integrity with industry-leading security protocols.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="text-teal-500 text-3xl mb-4">
+                            <span>&#127911;</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Dedicated Support</h3>
+                        <p class="text-slate-600">Our expert team is always on hand to provide the support and guidance you need.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About Our Firm</h2>
+                    <p class="text-lg text-slate-600">
+                        At Kali Data, we believe in the transformative power of data. We are a team of passionate data analysts, engineers, and strategists committed to helping businesses of all sizes harness their data to achieve their goals. Our mission is to simplify the complex world of data and make it a key driver of your success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
+                    <p class="text-lg text-slate-600">We offer a full suite of data services, from initial strategy to implementation and ongoing support.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128187;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Data Strategy</h3>
+                        <p class="text-slate-600">Develop a clear roadmap to turn your data into a strategic asset for growth.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128200;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Business Intelligence</h3>
+                        <p class="text-slate-600">Build dashboards and reports to visualize your data and monitor performance in real-time.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128269;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Predictive Analytics</h3>
+                        <p class="text-slate-600">Leverage machine learning to forecast trends and anticipate future business outcomes.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128190;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Data Warehousing</h3>
+                        <p class="text-slate-600">Design and implement robust data warehouses for scalable, centralized storage.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128221;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Data Governance</h3>
+                        <p class="text-slate-600">Ensure data quality, security, and compliance across your entire organization.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                        <div class="text-teal-500 text-5xl mb-4">
+                            <span>&#128172;</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Custom Solutions</h3>
+                        <p class="text-slate-600">We build bespoke data solutions tailored to your unique business challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Recent Work</h2>
+                    <p class="text-lg text-slate-600">Explore some of our recent projects and see how we've helped other businesses succeed.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="relative overflow-hidden rounded-xl group">
+                        <div class="w-full h-64 bg-slate-200"></div>
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-white text-xl font-bold">Project One</h4>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl group">
+                        <div class="w-full h-64 bg-slate-200"></div>
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-white text-xl font-bold">Project Two</h4>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl group">
+                        <div class="w-full h-64 bg-slate-200"></div>
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="text-white text-xl font-bold">Project Three</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pricing Plans</h2>
+                    <p class="text-lg text-slate-600">Choose the plan that best fits your business needs, from basic analytics to full-scale enterprise solutions.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center border-2 border-transparent hover:border-teal-500 transition-colors duration-200">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Basic</h3>
+                        <p class="text-slate-600">For small businesses starting out with data.</p>
+                        <div class="my-6">
+                            <span class="text-5xl font-bold text-blue-900">$29</span>
+                            <span class="text-slate-500">/month</span>
+                        </div>
+                        <ul class="text-slate-600 mb-8 space-y-2">
+                            <li>5 Projects</li>
+                            <li>Basic Reporting</li>
+                            <li>Email Support</li>
+                            <li>Limited Access</li>
+                        </ul>
+                        <a href="#" class="w-full block py-3 px-5 text-white font-medium bg-teal-500 hover:bg-teal-600 rounded-full transition-colors duration-200">Get Started</a>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center border-2 border-teal-500 transform scale-105">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Standard</h3>
+                        <p class="text-slate-600">Ideal for growing businesses that need more power.</p>
+                        <div class="my-6">
+                            <span class="text-5xl font-bold text-blue-900">$89</span>
+                            <span class="text-slate-500">/month</span>
+                        </div>
+                        <ul class="text-slate-600 mb-8 space-y-2">
+                            <li>25 Projects</li>
+                            <li>Advanced Reporting</li>
+                            <li>Priority Support</li>
+                            <li>Full Access</li>
+                        </ul>
+                        <a href="#" class="w-full block py-3 px-5 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Get Started</a>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 text-center border-2 border-transparent hover:border-teal-500 transition-colors duration-200">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                        <p class="text-slate-600">Custom solutions for large organizations.</p>
+                        <div class="my-6">
+                            <span class="text-5xl font-bold text-blue-900">Custom</span>
+                        </div>
+                        <ul class="text-slate-600 mb-8 space-y-2">
+                            <li>Unlimited Projects</li>
+                            <li>Advanced Analytics</li>
+                            <li>Dedicated Account Manager</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="#" class="w-full block py-3 px-5 text-white font-medium bg-teal-500 hover:bg-teal-600 rounded-full transition-colors duration-200">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Expert Team</h2>
+                    <p class="text-lg text-slate-600">Meet the talented professionals dedicated to your success.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                        <h4 class="text-xl font-bold text-slate-900">Jane Doe</h4>
+                        <p class="text-teal-500">CEO & Lead Data Strategist</p>
+                        <p class="text-sm text-slate-600 mt-2">Leads our vision and high-level client engagements.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                        <h4 class="text-xl font-bold text-slate-900">John Smith</h4>
+                        <p class="text-teal-500">Senior Data Analyst</p>
+                        <p class="text-sm text-slate-600 mt-2">Specializes in turning raw data into clear, actionable reports.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                        <div class="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                        <h4 class="text-xl font-bold text-slate-900">Emily Chen</h4>
+                        <p class="text-teal-500">Data Engineer</p>
+                        <p class="text-sm text-slate-600 mt-2">Builds robust systems for data collection and processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Contact Us</h2>
+                    <p class="text-lg text-slate-600">Get in touch to discuss how we can help your business thrive.</p>
+                </div>
+                <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
+                            <input type="text" id="name" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
+                            <input type="email" id="email" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
+                            <textarea id="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full py-3 px-6 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Send Message</button>
+                        </div>
+                    </form>
+                    <p class="text-center text-sm text-slate-500 mt-6">
+                        Or reach out directly at <a href="mailto:kalidataconsulting@pm.me" class="text-teal-500 hover:text-teal-600 font-medium">kalidataconsulting@pm.me</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p>&copy; 2024 Kali Data Consultancy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
