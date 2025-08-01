@@ -256,7 +256,7 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                        <img src="https://github.com/cisnerosjo/Kali-Data/blob/main/profilejc.jpeg?raw=true" alt="JC" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                        <img src="https://github.com/cisnerosjo/Kali-Data/blob/main/profilejc.jpeg?raw=true" alt="Jose Cisneros" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
                         <h4 class="text-xl font-bold text-slate-900">Jose Cisneros</h4>
                         <p class="text-teal-500">CEO & Lead Data Strategist</p>
                         <p class="text-sm text-slate-600 mt-2">Leads our vision and high-level client engagements.</p>
@@ -285,18 +285,18 @@
                     <p class="text-lg text-slate-600">Get in touch to discuss how we can help your business thrive.</p>
                 </div>
                 <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8">
-                    <form class="space-y-6">
+                    <form id="contactForm" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                            <input type="text" id="name" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
+                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
-                            <input type="email" id="email" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
+                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
                         </div>
                         <div>
                             <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                            <textarea id="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"></textarea>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500"></textarea>
                         </div>
                         <div>
                             <button type="submit" class="w-full py-3 px-6 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Send Message</button>
@@ -324,6 +324,25 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                const subject = `New message from ${name}`;
+                const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+                const mailtoLink = `mailto:kalidataconsulting@pm.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoLink;
+            } else {
+                // In a real application, you might show a custom modal or message
+                // For this example, we'll just log an error to the console.
+                console.log('Please fill in all fields.');
+            }
         });
     </script>
 </body>
