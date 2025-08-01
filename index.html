@@ -12,7 +12,7 @@
     <!-- Application Structure Plan: The website is a single-page application (SPA) with a top navigation bar that facilitates smooth scrolling to different sections (Hero, About, Services, Portfolio, Pricing, Team, Contact). This structure was chosen to provide a fluid, modern user experience, allowing visitors to quickly access all key information without navigating to separate pages. It mirrors the comprehensive content of the source report's pages within a unified, easily explorable layout. The primary user flow is to scroll and explore the company's offerings and brand story. The contact form now uses FormSubmit, a simple service that allows the form to actually send data to an email address without complex server-side code, improving functionality and user experience. -->
     <!-- Visualization & Content Choices: 
         - Report Info: Hero Section Text & Illustration -> Goal: Capture attention, introduce services -> Presentation: Large, bold text with a simple, abstract visual element (instead of a complex image to maintain the single-file constraint) -> Interaction: 'Discover More' button scrolls to Services section -> Justification: The layout is a direct adaptation of the provided image, but with branding and a functional button.
-        - Report Info: About/Services/Pricing/Team/Contact -> Goal: Inform and engage -> Presentation: Standard text blocks, card layouts, a functional form -> Interaction: Scroll-to-section navigation, form submission -> Justification: The form now uses the FormSubmit API to send data to an email address and redirects the user to a thank-you page after submission, providing a functional and seamless experience without the need for a backend.
+        - Report Info: About/Services/Pricing/Team/Contact -> Goal: Inform and engage -> Presentation: Standard text blocks, card layouts, a functional form -> Interaction: Scroll-to-section navigation, form submission -> Justification: The form now uses the FormSubmit API to send data to an email address and redirects the user to a thank-you page after submission, providing a functional and seamless experience without the need for a backend. The website now also includes a Google Analytics script for tracking web traffic.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -24,6 +24,15 @@
             scroll-behavior: smooth;
         }
     </style>
+    <!-- Google Analytics: Replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body class="text-slate-800">
     <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
