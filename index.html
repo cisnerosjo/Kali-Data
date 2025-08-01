@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Kali Data Color Scheme (Deep Blue, Teal, Cyan, White) -->
-    <!-- Application Structure Plan: The website is a single-page application (SPA) with a top navigation bar that facilitates smooth scrolling to different sections (Hero, About, Services, Portfolio, Pricing, Team, Contact). This structure was chosen to provide a fluid, modern user experience, allowing visitors to quickly access all key information without navigating to separate pages. It mirrors the comprehensive content of the source report's pages within a unified, easily explorable layout. The primary user flow is to scroll and explore the company's offerings and brand story. -->
+    <!-- Application Structure Plan: The website is a single-page application (SPA) with a top navigation bar that facilitates smooth scrolling to different sections (Hero, About, Services, Portfolio, Pricing, Team, Contact). This structure was chosen to provide a fluid, modern user experience, allowing visitors to quickly access all key information without navigating to separate pages. It mirrors the comprehensive content of the source report's pages within a unified, easily explorable layout. The primary user flow is to scroll and explore the company's offerings and brand story. The contact form now uses FormSubmit, a simple service that allows the form to actually send data to an email address without complex server-side code, improving functionality and user experience. -->
     <!-- Visualization & Content Choices: 
         - Report Info: Hero Section Text & Illustration -> Goal: Capture attention, introduce services -> Presentation: Large, bold text with a simple, abstract visual element (instead of a complex image to maintain the single-file constraint) -> Interaction: 'Discover More' button scrolls to Services section -> Justification: The layout is a direct adaptation of the provided image, but with branding and a functional button.
-        - Report Info: About/Services/Pricing/Team/Contact -> Goal: Inform and engage -> Presentation: Standard text blocks, card layouts, a form -> Interaction: Scroll-to-section navigation -> Justification: These are standard, professional patterns for corporate websites that are easy to consume and interact with. The Kali Data logo is used prominently as the main brand identifier. The contact form now uses client-side JavaScript to simulate a successful submission with a thank-you message, providing a better user experience without requiring a backend server.
+        - Report Info: About/Services/Pricing/Team/Contact -> Goal: Inform and engage -> Presentation: Standard text blocks, card layouts, a functional form -> Interaction: Scroll-to-section navigation, form submission -> Justification: The form now uses the FormSubmit API to send data to an email address and redirects the user to a thank-you page after submission, providing a functional and seamless experience without the need for a backend.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -284,32 +284,29 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Contact Us</h2>
                     <p class="text-lg text-slate-600">Get in touch to discuss how we can help your business thrive.</p>
                 </div>
-                <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8" id="contact-container">
-                    <form id="contactForm" class="space-y-6">
+                <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                    <form action="https://formsubmit.co/kalidataconsulting@pm.me" method="POST" class="space-y-6">
+                        <input type="hidden" name="_next" value="https://kali-data.vercel.app/#contact">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required>
+                            <input type="text" id="name" name="Full Name" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required>
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required>
+                            <input type="email" id="email" name="Email Address" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required>
                         </div>
                         <div>
                             <label for="phone" class="block text-sm font-medium text-slate-700">Phone (Optional)</label>
-                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
+                            <input type="tel" id="phone" name="Phone Number" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500">
                         </div>
                         <div>
                             <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required></textarea>
+                            <textarea id="message" name="Message" rows="4" class="mt-1 block w-full px-4 py-2 border border-slate-300 rounded-md shadow-sm focus:ring-teal-500 focus:border-teal-500" required></textarea>
                         </div>
                         <div>
                             <button type="submit" class="w-full py-3 px-6 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Send Message</button>
                         </div>
                     </form>
-                    <div id="confirmationMessage" class="hidden text-center py-12">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Thank You!</h3>
-                        <p class="text-lg text-slate-600">Your message has been sent successfully. We will get back to you shortly.</p>
-                    </div>
                     <p class="text-center text-sm text-slate-500 mt-6">
                         Or reach out directly at <a href="mailto:kalidataconsulting@pm.me" class="text-teal-500 hover:text-teal-600 font-medium">kalidataconsulting@pm.me</a>
                     </p>
@@ -332,24 +329,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        const contactForm = document.getElementById('contactForm');
-        const confirmationMessage = document.getElementById('confirmationMessage');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            if (name && email && message) {
-                contactForm.classList.add('hidden');
-                confirmationMessage.classList.remove('hidden');
-            } else {
-                console.log('Please fill in all required fields.');
-            }
         });
     </script>
 </body>
