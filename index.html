@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kali Data</title>
- <meta name="keywords" content="deacom, erp, reporting, powerbi, consulting, consumer products goods, manufacturing, supply chain, finance, production, data, sql, business intelligence, analytics">
-    
+
+    <!--
+    This is the meta keywords tag. While not as heavily weighted by search engines as they once were, it's still good practice to include them.
+    The most important places for SEO are the title tag, headings, and body text.
+    -->
+    <meta name="keywords" content="deacom, erp, reporting, powerbi, consulting, consumer products goods, manufacturing, supply chain, finance, production, data, sql, business intelligence, analytics">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +22,22 @@
         }
         html {
             scroll-behavior: smooth;
+        }
+        /*
+        This is the custom CSS for the sr-only class that Tailwind uses.
+        It moves the content off-screen so it's not visible to the human eye,
+        but it remains in the HTML source code for search engines to crawl.
+        */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFQFDW9P3R"></script>
@@ -57,9 +78,17 @@
                             Business visibility and reporting - in weeks not months, specializing in Deacom ERP
                         </h1>
                         <p class="text-lg text-slate-600 mb-8">
-                          Kali Data provides a faster path to actionable reports, requiring less time and effort from your team. Our buildable and customizable solutions are designed for any level of technical skill. 
+                            Kali Data provides a faster path to actionable reports, requiring less time and effort from your team. Our buildable and customizable solutions are designed for any level of technical skill.
                         </p>
                         <a href="#services" class="px-8 py-3 text-white font-medium bg-blue-900 hover:bg-blue-800 rounded-full transition-colors duration-200">Discover More</a>
+
+                        <!--
+                        This new div contains your keywords but is hidden from the user's view.
+                        Search engines will still be able to crawl this content.
+                        -->
+                        <div class="sr-only">
+                            Keywords: Deacom ERP, Power BI, data reporting, consulting, consumer products goods, manufacturing, supply chain, finance, production, SQL, business intelligence, analytics.
+                        </div>
                     </div>
                     <div class="relative flex justify-center items-center h-full">
                         <div class="absolute w-72 h-72 bg-teal-200 rounded-full opacity-30 blur-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -102,7 +131,7 @@
                 <div class="max-w-3xl mx-auto text-center">
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About Our Firm</h2>
                     <p class="text-lg text-slate-600">
-                        At Kali Data, we believe in the transformative power of data. We are a team of passionate data analysts, engineers, and strategists committed to helping small to medium businesses harness their data to achieve their goals. We specialize in providing custom data solutions for Deacom ECI, Power BI, and bespoke reporting needs. Our mission is to simplify the complex world of data and make it a key driver of your success.
+                        At Kali Data, we believe in the transformative power of data. We are a team of passionate data analysts, engineers, and strategists committed to helping small to medium businesses harness their data to achieve their goals. We specialize in providing custom data solutions for Deacom ECI, Power BI, and bespoke reporting needs. Our mission is to simplify the complex world of data and make it a key driver of your success through our expert consulting and SQL query support.
                     </p>
                 </div>
             </div>
